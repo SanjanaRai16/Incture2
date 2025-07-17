@@ -63,16 +63,22 @@ data.sort();
 console.log(data)
 data.reverse();
 console.log(data) */
-let num=[10,20,56,231,24]
+let arr=[10,20,56,231,24]
 
-for(let i=0;i<=num.length;i++)
+for(let i=0;i<arr.length-1;i++)
+{
+
+for(let j=0;j<arr.length-i-1;j++)
   { 
-    temp=num[i]
-    if(temp>num[i+1])
-  {
-    num[i]=num[i+1]
-    
+    if(arr[j]>arr[j+1])
+    {
+      let temp=arr[j]
+      arr[j]=arr[j+1]
+      arr[j+1]=temp;
+    }
+
   }
- 
-  }
-  console.log(num);
+  
+  
+}
+ console.log(arr);
