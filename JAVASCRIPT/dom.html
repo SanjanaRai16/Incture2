@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 class="h1">Javascript</h1>
+    <h2 class="h1">First Heading</h2>
+    <h3 class="h1">Second heading</h3>
+    <h4 class="h2">Third heading</h4>
+    <h5>Fourth heading</h5>
+    <p id="p1">fist paragraph</p>
+    <p>second paragraph</p>
+    <p>third paragraph</p>     
+    <p>fourth paragraph</p>
+    <p>fifth paragraph</p> -->
+    <h1 class="head1">welcome to Dom Manipulation:</h1>
+    <br><br>
+    <img id="off" src="offbulb.jpg">
+    <br><br>
+    <button onclick="offbulb()">off</button>
+    <button onclick="onbulb()">on</button>
+    <button id="toggle" onclick="togglebuttton()">On_button</button>
+    
+    
+</body>
+<script>
+   /*  let p_obj=document.getElementById('p1');
+    console.log(p_obj);
+    p_obj.style.color='red';
+    let h1_obj=document.getElementsByClassName('h1');
+    console.log(h1_obj);
+    h1_obj[2].style.color='blue';
+    let obj=document.getElementsByTagName("p");
+    console.log(obj)
+    obj[2].style.color="red"
+/*  
+let obj=document.querySelectorAll("p")
+console.log(obj) */
+function offbulb(){
+    let obj=document.getElementById("off")
+     obj.setAttribute("src","offbulb.jpg")
+    
+    
+}
+function onbulb(){
+    let obj=document.getElementById("off")
+    obj.setAttribute("src","onbulb.jpg")
+   
+}
+function togglebuttton(){
+    let obj=document.getElementById("off")
+    let src_value=obj.getAttribute("src")
+    let btn=document.getElementById("toggle")
+    let btn_text=btn.innerHTML;
+    if(src_value=="offbulb.jpg")
+{
+    onbulb();
+    btn.innerHTML="off_bulb"
+}
+else{
+    offbulb();
+    btn.innerHTML="on_bulb"
+    
+}
+   
+    }
+    
+
+
+</script>
+</html>
