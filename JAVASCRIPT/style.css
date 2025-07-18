@@ -1,13 +1,12 @@
-
 .calculator {
   width: 220px;          
-  background-color: #f0f0f0; 
+  background-color: lab(89.26% -46.82 -13.79); 
   padding: 10px;                 
 }
 
 
-#display {
-  width: 200px ;              
+#value {
+  width: 210px ;              
   height: 50px;             
   font-size: 20px;       
   text-align: right;         
@@ -17,7 +16,7 @@
 
 .buttons {
   display: grid;            
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(4, 1fr); 
   gap: 10px;                
 }
 
@@ -25,15 +24,22 @@
 button {
   height: 40px;             
   font-size: 18px;          
-  background-color: #4CAF50; 
+  background-color: #000000; 
   color: white;              
   text-align:center      
   
 }
-
-
-button:hover {
-  background-color: #45a049; 
+.clear {
+  grid-column: 4; /* Pushes it to the 4th column */
+  background-color: #f44336; /* Optional: red color */
+  color: white;
 }
 
+.clear:hover {
+  background-color: #650505; /* Darker red on hover */
+}
+button:hover {
+  background-color: #656765; 
+}
 
+  

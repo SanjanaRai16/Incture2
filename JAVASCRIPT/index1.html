@@ -1,57 +1,98 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Calculator with all operations</title>
+  <title>Simple Calculator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="calculator">
-    <input type="text" id="display" disabled />
+    <input type="text" id="value" disabled />
     <div class="buttons">
-      <button onclick="addValue('7')">7</button>
-      <button onclick="addValue('8')">8</button>
-      <button onclick="addValue('9')">9</button>
-      <button onclick="addValue('/')">/</button>
+      <button onclick="insertValue('7')">7</button>
+      <button onclick="insertValue('8')">8</button>
+      <button onclick="insertValue('9')">9</button>
+      <button onclick="insertValue('/')">÷</button>
 
-      <button onclick="addValue('4')">4</button>
-      <button onclick="addValue('5')">5</button>
-      <button onclick="addValue('6')">6</button>
-      <button onclick="addValue('*')">*</button>
+      <button onclick="insertValue('4')">4</button>
+      <button onclick="insertValue('5')">5</button>
+      <button onclick="insertValue('6')">6</button>
+      <button onclick="insertValue('*')">x</button>
 
-      <button onclick="addValue('1')">1</button>
-      <button onclick="addValue('2')">2</button>
-      <button onclick="addValue('3')">3</button>
-      <button onclick="addValue('-')">-</button>
+      <button onclick="insertValue('1')">1</button>
+      <button onclick="insertValue('2')">2</button>
+      <button onclick="insertValue('3')">3</button>
+      <button onclick="insertValue('-')">-</button>
 
-      <button onclick="addValue('0')">0</button>
-      <button onclick="addValue('.')">.</button>
+      <button onclick="insertValue('0')">0</button>
+      <button onclick="insertValue('.')">.</button>
+      <button onclick="insertValue('(')">(</button>
+<button onclick="insertValue(')')">)</button>
+<button onclick="insertValue()">√</button>
+      <button onclick="insertValue('%')">%</button>
+      <button onclick="insertValue('^')">^</button>
       <button onclick="calculateResult()">=</button>
-      <button onclick="addValue('+')">+</button>
+      <button onclick="insertValue('+')">+</button>
 
-      <button onclick="clearDisplay()">C</button>
+      <button class ="clear"onclick="clearDisplay()">C</button>
     </div>
   </div>
 
- <script>
-    function addValue(value)
+  <script>
+    const Value = document.getElementById('value');
 
-    {
-        document.getElementById('display').value+=value;
+    function insertValue(val) {
+      Value.value += val;
     }
-    function clearDisplay(){
-        document.getElementById('display').value='';
-    }
-    function calculateResult(){
-        let choice=document.getElementById('display').value;
-        switch(choice){
 
-            case 1:
-
-        }
+    function clearDisplay() {
+      Value.value = '';
     }
- </script>
+
+    function calculateResult() {
+     let operator=["+","-","*","/","√",""]
+  
+      
+  const num1 = (expr.slice(0, index));
+  const num2 = (expr.slice(index + 1));
+
+  let result;
+
+  switch (operator) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    case '/':
+  if (num2 !== 0) {
+    result = num1 / num2;
+  } else {
+    result = 'Error';
+  }
+  break;
+
+    case '%':
+      result = num1 % num2;
+      break;
+    case '^':
+      result = Math.pow(num1, num2);
+      break;
+    case '√':
+      result = Math.sqrt(num1);
+      break;
+    default:
+      result = 'Error';
+  }
+
+  Value.value = result;
+}
+  </script>
+
 </body>
 </html>
