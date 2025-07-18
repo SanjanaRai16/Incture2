@@ -30,7 +30,7 @@ function getDatas(){
         document.body.innerHTML=output;
     },3000);
 }
-function createDatas(newData,callback){
+/* function createDatas(newData,callback){
     setTimeout(() =>{
         
         datas.push(newData);
@@ -38,4 +38,44 @@ function createDatas(newData,callback){
             
         },5000);
 }
-createDatas({name:"ajay",Profession:"senior Developer"},getDatas);
+createDatas({name:"ajay",Profession:"senior Developer"},getDatas); */
+/* function createDatas(newData){
+    return new Promise((resolve,reject)=>{
+    setTimeout(() =>{ 
+        datas.push(newData);
+        let error=false;
+        if(!error){
+            resolve();
+        }
+        else{
+            reject("error")
+        }
+        
+       
+            
+        },5000);
+})
+}
+createDatas({name:"ajay",Profession:"senior Developer"})
+.then(getDatas)
+.catch(err=>console.log(err)) */
+function createDatas(newData){
+    return new Promise((resolve,reject)=>{
+    setTimeout(() =>{ 
+        datas.push(newData);
+        let error=true;
+        if(!error){
+            resolve();
+        }
+        else{
+            reject("error")
+        }
+        
+       
+            
+        },5000);
+})
+}
+createDatas({name:"ajay",Profession:"senior Developer"})
+.then(getDatas)
+.catch(err=>console.log(err))
