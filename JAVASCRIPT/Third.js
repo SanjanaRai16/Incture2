@@ -63,7 +63,7 @@ function createDatas(newData){
     return new Promise((resolve,reject)=>{
     setTimeout(() =>{ 
         datas.push(newData);
-        let error=true;
+        let error=false;
         if(!error){
             resolve();
         }
@@ -76,6 +76,12 @@ function createDatas(newData){
         },5000);
 })
 }
-createDatas({name:"ajay",Profession:"senior Developer"})
+/* createDatas({name:"ajay",Profession:"senior Developer"})
 .then(getDatas)
-.catch(err=>console.log(err))
+.catch(err=>console.log(err)) */
+async function start(){
+    await createDatas({name:"ajay",Profession:"senior Developer"});
+    getDatas();
+
+}
+start();

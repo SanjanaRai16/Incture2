@@ -29,7 +29,7 @@
       <button onclick="insertValue('.')">.</button>
       <button onclick="insertValue('(')">(</button>
 <button onclick="insertValue(')')">)</button>
-<button onclick="insertValue()">√</button>
+
       <button onclick="insertValue('%')">%</button>
       <button onclick="insertValue('^')">^</button>
       <button onclick="calculateResult()">=</button>
@@ -40,25 +40,52 @@
   </div>
 
   <script>
-    const Value = document.getElementById('value');
+   const Value = document.getElementById('value');
 
-    function insertValue(val) {
-      Value.value += val;
-    }
+function insertValue(val) {
+  Value.value += val;
+}
 
-    function clearDisplay() {
-      Value.value = '';
-    }
+function clearDisplay() {
+  Value.value = ''; // Fixed missing semicolon
+}
 
-    function calculateResult() {
-     let operator=["+","-","*","/","√",""]
+function calculateResult(expr) {
+  const operators = ["+", "-", "*", "/", "√", "^"];
   
-      
-  const num1 = (expr.slice(0, index));
-  const num2 = (expr.slice(index + 1));
-
+  let operatorIndex = -1;
+  let operator = '';
   let result;
+  let num1, num2;
 
+  // Find the operator in the expression
+  for (let i = 0; i < operators.length; i++) {
+    operatorIndex = expr.indexOf(operators[i]);
+    if (operatorIndex !== -1) {
+      operator = operators[i];
+      break;
+    }
+  }
+
+  if (operatorIndex === -1) {
+    return "Invalid operator!";
+  }
+
+  // Split the expression into operands
+  const operands = expr.split(operator);
+  if (operands.length < 2) {
+    return "Invalid input!";
+  }
+
+  num1 = parseFloat(operands[0].trim());
+  num2 = operator !== '√' ? parseFloat(operands[1].trim()) : null; // Only one operand for square root
+
+  // Ensure operands are numbers
+  if (isNaN(num1) || (num2 !== null && isNaN(num2))) {
+    return "Invalid number input!";
+  }
+
+  // Perform the calculation based on the operator
   switch (operator) {
     case '+':
       result = num1 + num2;
@@ -70,28 +97,30 @@
       result = num1 * num2;
       break;
     case '/':
-  if (num2 !== 0) {
-    result = num1 / num2;
-  } else {
-    result = 'Error';
-  }
-  break;
-
-    case '%':
-      result = num1 % num2;
+      if (num2 !== 0) {
+        result = num1 / num2;
+      } else {
+        result = 'Error: Division by zero';
+      }
+      break;
+    case '√':
+      if (num1 >= 0) {
+        result = Math.sqrt(num1);
+      } else {
+        result = 'Error: Negative square root';
+      }
       break;
     case '^':
       result = Math.pow(num1, num2);
       break;
-    case '√':
-      result = Math.sqrt(num1);
-      break;
     default:
-      result = 'Error';
+      result = 'Error: Invalid operator';
   }
 
-  Value.value = result;
+  return result;
 }
+
+
   </script>
 
 </body>
