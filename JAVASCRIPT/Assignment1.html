@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" id="value" disabled />
+    
+    <div class="buttons">
+      <button onclick="insertValue('7')">7</button>
+      <button onclick="insertValue('8')">8</button>
+      <button onclick="insertValue('9')">9</button>
+      <button onclick="insertValue('/')">÷</button>
+
+      <button onclick="insertValue('4')">4</button>
+      <button onclick="insertValue('5')">5</button>
+      <button onclick="insertValue('6')">6</button>
+      <button onclick="insertValue('*')">x</button>
+
+      <button onclick="insertValue('1')">1</button>
+      <button onclick="insertValue('2')">2</button>
+      <button onclick="insertValue('3')">3</button>
+      <button onclick="insertValue('-')">-</button>
+
+      <button onclick="insertValue('0')">0</button>
+      <button onclick="insertValue('.')">.</button>
+      <button onclick="insertValue('(')">(</button>
+      <button onclick="insertValue(')')">)</button>
+      <button onclick="insertValue('√')">√</button>
+      <button onclick="insertValue('%')">%</button>
+      <button onclick="insertValue('^')">^</button>
+      <button onclick="calculateResult()">=</button>
+      <button onclick="insertValue('+')">+</button>
+
+      <button class ="clear"onclick="clearDisplay()">C</button>
+    </div>
+  </div>
+
+  <script>
+    
+      function insertValue(val) {
+      const display = document.getElementById("value");
+      display.value += val;
+    }
+
+    function clearDisplay() {
+      document.getElementById("value").value = "";
+    }
+
+    function calculateResult() {
+      const Value = document.getElementById("value");
+      const expr = Value.value;
+      let operator = null;
+      let index = -1;
+  for (let op of ['+', '-', '*', '/', '%', '^','√']) {
+        index = expr.indexOf(op);
+        if (index !== -1) {
+          operator = op;
+          break;
+        }
+      }
+
+      if (!operator) {
+        Value.value = 'Error';
+        return;
+      }
+
+      const num1 = parseFloat(expr.slice(0, index));
+      const num2 = parseFloat(expr.slice(index + 1));
+
+      let result;
+      
+      
+        switch (operator) {
+          case '+':
+            result = num1 + num2;
+            break;
+          case '-':
+            result = num1 - num2;
+            break;
+          case '*':
+            result = num1 * num2;
+            break;
+          case '/':
+  if (num2 !== 0) {
+    result = num1 / num2;
+  } else {
+    result = 'Error';
+  }
+  break;
+
+          
+          case '%':
+            result = num1 % num2;
+            break;
+          case '^':
+            result = Math.pow(num1, num2);
+            break;
+          case '√':
+    
+              result = Math.sqrt(num1);
+            
+            break;
+        }
+      
+
+      Value.value = result;
+    }
+
+
+
+
+
+  </script>
+
+</body>
+</html>

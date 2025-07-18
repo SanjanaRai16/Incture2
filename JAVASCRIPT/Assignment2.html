@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Do List</title>
+  <style>
+    body {
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      margin: 20px;
+    }
+     
+    .main {
+      background-color: #7db9e8;
+      padding: 10px;
+      color: white;
+      border:6px #060606 dashed;
+      
+      border-radius: 10px;
+    }
+
+    #task-list {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      height: 100%;
+      border-radius: 10px;
+      border: 4px #fff7f7 dashed ;
+    
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-style:italic;
+    }
+
+    button {
+      margin-left: 10px;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      border-radius: 10px;
+      background-color: red;
+      color: aliceblue;
+      
+    }
+    #b1{
+        
+        background-color:rgb(50, 7, 135);
+        border-radius: 10px;
+        color:aliceblue;
+        font-family: 'Courier New', Courier, monospace;
+
+
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>To Do List</h1>
+    <input type="text" id="task" placeholder="Enter the task" />
+    <button id="b1" onclick="addTask()">Add Task</button>
+    <p>----------------------------------------------List of Tasks------------------------------------------------------</p>
+    <ol id="task-list">
+      <li id="task1"><input type="checkbox" /> Wake Up Early
+        <button onclick="deleteTask('task1')">Delete Task</button>
+      </li>
+      <li id="task2"><input type="checkbox" /> Freshup
+        <button onclick="deleteTask('task2')">Delete Task</button>
+      </li>
+      <li id="task3"><input type="checkbox" /> Morning Walk
+        <button onclick="deleteTask('task3')">Delete Task</button>
+      </li>
+      <li id="task4"><input type="checkbox" /> Breakfast
+        <button onclick="deleteTask('task4')">Delete Task</button>
+      </li>
+    </ol>
+  </div>
+
+  <script>
+    
+let Counter = document.querySelectorAll('#task-list li').length;
+
+function addTask() {
+  let input = document.getElementById('task');
+  let taskText = input.value;
+
+  if (taskText === '') {
+    alert("Please enter the task");
+    return;
+  }
+
+  let taskList = document.getElementById('task-list');
+  let li = document.createElement('li');
+  let id = 'task' + Counter;
+  Counter++;
+
+  li.id = id;
+  li.innerHTML = 
+    '<input type="checkbox" /> ' + taskText +
+    ' <button onclick="deleteTask(\'' + id + '\')">Delete Task</button>';
+
+  taskList.appendChild(li);
+  input.value = '';
+}
+
+function deleteTask(taskId) {
+  let item = document.getElementById(taskId);
+  if (item) {
+    item.remove();
+  }
+}
+
+  </script>
+</body>
+</html>

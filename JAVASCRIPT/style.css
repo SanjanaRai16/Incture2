@@ -1,32 +1,45 @@
 .calculator {
   width: 220px;          
-  background-color: lab(89.26% -46.82 -13.79); 
-  padding: 10px;                 
+  background-color: lab(25.7% 49.21 2.47); 
+  padding: 10px; 
+  border-radius: 10px;   
+  border: 2px white double;              
 }
 
 
 #value {
-  width: 210px ;              
-  height: 50px;             
-  font-size: 20px;       
-  text-align: right;         
-  background-color: #fff;    
+  width: 216px ;              
+  height: 49px;             
+  font-size: 20px;
+  border: #000000; 
+  border-radius: 10px; 
+  padding-bottom: 10px;
+  color:white;
+  margin-bottom: 10px;
+  text-align: center;         
+  background-color: #ff0c0c;  
+  border: 2px white double;     
+    
 }
 
 
 .buttons {
   display: grid;            
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 10px;                
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px;  
+ 
+               
 }
 
 
 button {
   height: 40px;             
   font-size: 18px;          
-  background-color: #000000; 
-  color: white;              
-  text-align:center      
+  background-color: #d1a2b9; 
+  color: rgb(173, 14, 78);              
+  text-align:center; 
+   border-radius: 10000000000000px; 
+   border: 2px white double;     
   
 }
 .clear {
