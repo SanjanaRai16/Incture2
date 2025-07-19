@@ -1,11 +1,12 @@
-
+import First from "./First.jsx";
 
 function App() {
   return (
-    <p>
+    <div>
     <h1>hi</h1>
     <p>hello</p>
-    </p>
+    <First/>
+  </div>
   );
 }
 
