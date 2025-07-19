@@ -2,6 +2,7 @@
 import First from "./First.jsx"
 import Second from "./Second.jsx"
 import Third from "./Third.jsx"
+import Fourth from "./Fourth.jsx"
 function App() {
   
   return (
@@ -10,6 +11,7 @@ function App() {
       <First/>
       <Second/>
       <Third/>
+      <Fourth/>
     </div>
   )
 }

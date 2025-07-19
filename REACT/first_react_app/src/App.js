@@ -1,4 +1,6 @@
 import First from "./First.jsx";
+import Fourth from "./Fourth.js";
+import Third from "./Third.js";
 
 function App() {
   return (
@@ -6,6 +8,8 @@ function App() {
     <h1>hi</h1>
     <p>hello</p>
     <First/>
+    <Fourth/>
+    <Third/>
   </div>
   );
 }
