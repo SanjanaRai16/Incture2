@@ -9,12 +9,15 @@
       font-family:Georgia, 'Times New Roman', Times, serif;
       margin: 20px;
     }
-     
+     p{
+      text-align: center;
+      text-decoration:underline;
+     }
     .main {
       background-color: #7db9e8;
       padding: 10px;
       color: white;
-      border:6px #060606 dashed;
+      border:6px #060606 ;
       
       border-radius: 10px;
     }
@@ -25,7 +28,7 @@
       padding: 20px;
       height: 100%;
       border-radius: 10px;
-      border: 4px #fff7f7 dashed ;
+      border: 4px #fff7f7 dotted ;
     
     }
 
@@ -33,12 +36,20 @@
       margin-bottom: 10px;
       font-style:italic;
     }
+    input{
+      border:2px;
+      border-color: black;
+      background-color: #e8dd7d;
+      color:rgb(0, 0, 0)
+
+    }
 
     button {
       margin-left: 10px;
       font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      border-radius: 10px;
+      border-radius:none;
       background-color: red;
+      border-style: solid;
       color: aliceblue;
       
     }
@@ -51,6 +62,17 @@
 
 
     }
+    #b1:hover{
+      background-color: #7db9e8;
+      font-size:large;
+
+    }
+    button:hover{
+      background-color: brown;
+      font-size: large;
+      
+      
+    }
   </style>
 </head>
 <body>
@@ -58,7 +80,7 @@
     <h1>To Do List</h1>
     <input type="text" id="task" placeholder="Enter the task" />
     <button id="b1" onclick="addTask()">Add Task</button>
-    <p>----------------------------------------------List of Tasks------------------------------------------------------</p>
+    <p>List of Tasks</p>
     <ol id="task-list">
       <li id="task1"><input type="checkbox" /> Wake Up Early
         <button onclick="deleteTask('task1')">Delete Task</button>
@@ -99,7 +121,7 @@ function addTask() {
     ' <button onclick="deleteTask(\'' + id + '\')">Delete Task</button>';
 
   taskList.appendChild(li);
-  input.value = '';
+
 }
 
 function deleteTask(taskId) {
