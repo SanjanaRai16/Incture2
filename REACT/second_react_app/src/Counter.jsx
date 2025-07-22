@@ -73,7 +73,7 @@ export default Counter;
  */
 import  { useState } from 'react';
 
-function Counter({ initialCount = 0 }) {
+function Counter({ initialCount }) {
   const [count, setCount] = useState(initialCount);
 
   return (

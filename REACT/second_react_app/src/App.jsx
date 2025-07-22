@@ -8,6 +8,7 @@ import Store from "./Store.jsx"
 import Counter from "./Counter.jsx"
 import NewComp from "./NewComp.jsx"
 //import First from "./First.jsx"
+import FirstEvent from "./FirstEvent.jsx"
 
 function App() {
   function handleClick(){
@@ -17,10 +18,10 @@ function App() {
   return (
     <div>
       <h1>React App with vite</h1>
-   <First/>
+  {/*  <First/>
       <Second/>
       <Third/>
-      <Fourth/>
+      <Fourth/> */}
 {/*       <Card name="Ashu" city="Mangalore"/>
        <Card name="Abhi" city="Bcroad"/>
        <Card name="Sanju" city="Kudla"/> */}
@@ -28,6 +29,7 @@ function App() {
        <Store/>
        <Counter initialCount={100}/>
        <NewComp/>
+       <FirstEvent/>
 
        
        
