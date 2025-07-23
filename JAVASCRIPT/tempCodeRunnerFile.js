@@ -21,4 +21,3 @@ function shortestPalindrome(s) {
 }
 
 console.log(shortestPalindrome("aacecaaa")); 
-
