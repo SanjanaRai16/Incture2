@@ -8,8 +8,19 @@ import Store from "./Store.jsx"
 import Counter from "./Counter.jsx"
 import NewComp from "./NewComp.jsx"
 //import First from "./First.jsx"
+import FirstList from "../component/FirstList.jsx"
 import FirstEvent from "./FirstEvent.jsx"
-
+import SecondList from "../component/SecondList.jsx"
+import EmployeeList from "../component/EmployeeList.jsx"
+import CourseList from "../component/CourseList.jsx"
+import TableList from "../component/TableList.jsx"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import BootStrapTable from "../component/BootStrapTable.jsx"
+import NameList from "../component/Namelist.jsx"
+import NameList2 from "../component/NameList2.jsx"
+import NameList3 from "../component/NameList3.jsx"
+import NameList4 from "../component/NameList4.jsx"
+import NameList5 from "../component/NameList5.jsx"
 function App() {
   function handleClick(){
     alert("Function from parent component");
@@ -25,11 +36,22 @@ function App() {
 {/*       <Card name="Ashu" city="Mangalore"/>
        <Card name="Abhi" city="Bcroad"/>
        <Card name="Sanju" city="Kudla"/> */}
-       <Card label="Click Me" onClick={handleClick}/>
+      {/*  <Card label="Click Me" onClick={handleClick}/>
        <Store/>
        <Counter initialCount={100}/>
        <NewComp/>
-       <FirstEvent/>
+       <FirstEvent/> */}
+       {/* <FirstList/>
+       <SecondList/>
+       <EmployeeList/>
+       <CourseList/>
+       <TableList/>
+       <BootStrapTable/> */}
+       <NameList/>
+       <NameList2/>
+       <NameList3/>
+       <NameList4/>
+       <NameList5/>
 
        
        

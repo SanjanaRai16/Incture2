@@ -15,9 +15,9 @@ function shortestPalindrome(s) {
     }
 
     var suffix = s.substring(end);
-    var prefixToAdd= suffix.split('').reverse().join('');
+    var prefix= suffix.split('').reverse().join('');
     
-    return prefixToAdd + s;
+    return prefix+ s;
 }
 
 console.log(shortestPalindrome("aacecaaa")); 
