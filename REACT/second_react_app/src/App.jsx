@@ -21,6 +21,9 @@ import NameList2 from "../component/NameList2.jsx"
 import NameList3 from "../component/NameList3.jsx"
 import NameList4 from "../component/NameList4.jsx"
 import NameList5 from "../component/NameList5.jsx"
+import LifeCycleFirst from "../life_cycle_component/LifeCycleFirst.jsx"
+import LifeCycleSecond from "../life_cycle_component/LifeCylceSecond.jsx"
+import LifeCycleThird from "../life_cycle_component/LifeCycleThird.jsx"
 function App() {
   function handleClick(){
     alert("Function from parent component");
@@ -47,11 +50,14 @@ function App() {
        <CourseList/>
        <TableList/>
        <BootStrapTable/> */}
-       <NameList/>
+       {/* <NameList/>
        <NameList2/>
        <NameList3/>
        <NameList4/>
-       <NameList5/>
+       <NameList5/> */}
+    {/*    <LifeCycleFirst/> */}
+    <LifeCycleSecond/>
+    <LifeCycleThird/>
 
        
        
