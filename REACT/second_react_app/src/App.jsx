@@ -24,6 +24,16 @@ import NameList5 from "../component/NameList5.jsx"
 import LifeCycleFirst from "../life_cycle_component/LifeCycleFirst.jsx"
 import LifeCycleSecond from "../life_cycle_component/LifeCylceSecond.jsx"
 import LifeCycleThird from "../life_cycle_component/LifeCycleThird.jsx"
+import FirstComp from "../hooks/FirstComp.jsx"
+import SecondComp from "../hooks/SecondComp.jsx"
+import ThirdComp from "../hooks/ThirdComp.jsx"
+import FourthComp from "../hooks/FourthComp.jsx"
+import FifthComp from "../hooks/FifthComp.jsx"
+import SixthComp from "../hooks/SixthComp.jsx"
+import Parent from "../hooks/Parent.jsx"
+import FirstCounter from "../custom_hooks/FirstCounter.jsx"
+import SecondCounter from "../custom_hooks/SecondCounter.jsx"
+import ThirdCounter from "../custom_hooks/ThirdCounter.jsx"
 function App() {
   function handleClick(){
     alert("Function from parent component");
@@ -31,7 +41,7 @@ function App() {
   
   return (
     <div>
-      <h1>React App with vite</h1>
+      {/* <h1>React App with vite</h1> */}
   {/*  <First/>
       <Second/>
       <Third/>
@@ -56,12 +66,22 @@ function App() {
        <NameList4/>
        <NameList5/> */}
     {/*    <LifeCycleFirst/> */}
-    <LifeCycleSecond/>
+    {/* <LifeCycleSecond/>
     <LifeCycleThird/>
+  
+   {/*  <SecondComp/> */}
+   {/*  <ThirdComp/>
+ */}
+       {/* <FourthComp/>
+       <SecondComp/>
+       <FifthComp/> */}
+      {/*  <SixthComp/>
+       <Parent/>
+     */}
+     <FirstCounter/>
+     <SecondCounter/>
+     <ThirdCounter/>
 
-       
-       
-    
     
     </div>
   )
