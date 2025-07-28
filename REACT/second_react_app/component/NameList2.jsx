@@ -11,11 +11,7 @@ const names=[
             
            
         ]
-  /*   const handleButton=(id)=>{
-        const newNames=names.filter((n)=>n.id!==id);
-        setNames(newNames)
-    } */
-
+  
 return(
  <div>
     <h2>TASK 2</h2>
@@ -34,9 +30,7 @@ return(
                             <td>{n.id}</td>
                             <td>{n.name}</td>
                             <td>{n.age}</td>
-                             {/* <td>
-                                 <button onClick={()=>{handleButton(n.id)}}>Delete</button>
-                            </td> */}
+                           
                         </tr>
                     ))
                 }

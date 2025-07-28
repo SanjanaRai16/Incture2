@@ -34,18 +34,26 @@ import Parent from "../hooks/Parent.jsx"
 import FirstCounter from "../custom_hooks/FirstCounter.jsx"
 import SecondCounter from "../custom_hooks/SecondCounter.jsx"
 import ThirdCounter from "../custom_hooks/ThirdCounter.jsx"
+import FirstComponent from "../context/FirstComponent.jsx"
+import UserContext from "../context/userContext.jsx"
+import ThemeProvider from "../new_context/ThemeContext.jsx"
+import ThemeToggleComp from "../new_context/ThemeToggleContext.jsx"
+
+
 function App() {
-  function handleClick(){
-    alert("Function from parent component");
-  }
+  /* function handleClick(){
+    alert("Function from parent component"); */
+    //const username="sachin";
   
-  return (
-    <div>
+  
+
+    {/* <UserContext.Provider value={username} */}
+   /*  <div> */ 
       {/* <h1>React App with vite</h1> */}
-  {/*  <First/>
+   {/* <First/>
       <Second/>
       <Third/>
-      <Fourth/> */}
+      <Fourth/>  */}
 {/*       <Card name="Ashu" city="Mangalore"/>
        <Card name="Abhi" city="Bcroad"/>
        <Card name="Sanju" city="Kudla"/> */}
@@ -78,13 +86,28 @@ function App() {
       {/*  <SixthComp/>
        <Parent/>
      */}
-     <FirstCounter/>
+     {/* <FirstCounter/>
      <SecondCounter/>
      <ThirdCounter/>
+ */}
+ {/* <FirstComponent username={username}/> */}
 
-    
-    </div>
-  )
+
+/*  </ *//* 
+ <FirstComponent/> */
+ //</div> 
+/*  </UserContext.Provider>   */ //useercontext provider outside div
+  return (
+<ThemeProvider>
+      <h1 style={{ textAlign: 'center' }}>Theme Toggle Application</h1>
+      <ThemeToggleComp />
+    </ThemeProvider>
+  );
 }
+    
+   
+  
+
 
 export default App
+

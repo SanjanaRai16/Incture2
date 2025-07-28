@@ -146,6 +146,4 @@ function FirstEvent(){
     )
 }
 
-export default FirstEvent; 
-
-
+export default FirstEvent;
