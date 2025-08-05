@@ -7,3 +7,12 @@
         payload:product
     }
 }
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+
+export const removeFromCart = (productId) => {
+  return {
+    type: REMOVE_FROM_CART,
+    payload: { id: productId, quantity: 1 }, // default remove 1 quantity
+  };
+};
+
