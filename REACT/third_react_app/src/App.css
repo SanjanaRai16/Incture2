@@ -1,0 +1,42 @@
+.link{
+    margin-right: 15px;
+    color:black;
+    text-align: none;
+}
+.active-link{
+    margin-right: 15px;
+    color:green;
+    font-weight: bold;
+
+}
+/* Center the dashboard container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+/* Style for the buttons */
+.dashboard-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.dashboard-button {
+  padding: 12px 32px;
+  font-size: 1rem;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.dashboard-button:hover {
+  background-color: #1565c0;
+}
