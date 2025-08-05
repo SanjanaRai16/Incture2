@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import Counter from './components/Counter'
 import './App.css'
-
+import Productlist from './components/ProdutList'
+import Cart from './components/Cart'
 function App() {
   
 
@@ -9,7 +10,9 @@ function App() {
     
       <div>
         <h1>Redux</h1>  
-              <Counter/>
+           {/*    <Counter/> */}
+           <Productlist/>
+           <Cart/>
         </div>
         )
        
